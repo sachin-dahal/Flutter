@@ -4,7 +4,7 @@ void main(){
   runApp(new MyApp());
 }
 //stl for stateless widget
-//stf for state  less widget
+//stf for stateful widget
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class HomePage extends StatefulWidget {
 
 
 class _HomePageState extends State<HomePage> {
-  String mytext = "Hello Boy!",
+  String mytext = "Hello Boy!";
 
 void _changeText(){
   setState(() {
@@ -31,7 +31,7 @@ void _changeText(){
     mytext = ("Welcome to my app.");
     }
     else{
-    (mytext = "Hello Boy!");
+    mytext = "Hello Boy!";
     }
     
   });
@@ -43,7 +43,7 @@ padding: const EdgeInsets.all(6.0),
 child: new Center(
   child: new Column(
     children: <Widget>[
-      new Text(mytext)
+      new Text(mytext),
       new RaisedButton(
         child: new Text('Click Here!'),
         onPressed: _changeText,
