@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
+
   runApp(new MyApp());
 }
-//stl for stateless widget
-//stf for stateful widget
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-
-      title: "My App",
-      home: new HomePage(),
+      title: "Home Page",
+      home : new HomePage(),
+      
     );
   }
 }
@@ -23,41 +23,56 @@ class HomePage extends StatefulWidget {
 
 
 class _HomePageState extends State<HomePage> {
-  String mytext = "Hello Boy!";
 
-void _changeText(){
-  setState(() {
-    if (mytext.startsWith('H')) {
-    mytext = ("Welcome to my app.");
-    }
-    else{
-    mytext = "Hello Boy!";
-    }
-    
-  });
-}
+String myText= ('Good Morning!');
+
+
+  void _changeText(){
+    setState(() {
+      if (myText.startsWith('G')){
+     myText = "Are You Fine?";
+      }else{
+        myText= ('Good Morning!');
+
+      }
+    });
+  }
+
 
 Widget _usedWidget(){
   return new Container(
-padding: const EdgeInsets.all(6.0),
-child: new Center(
-  child: new Column(
-    children: <Widget>[
-      new Text(mytext),
-      new RaisedButton(
-        child: new Text('Click Here!'),
-        onPressed: _changeText,
-      )
-    ],
-  ),
-),
-);
+    padding: const EdgeInsets.all(6.0),
+    child: new Center(
+      child: new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          new Text(myText, style: new TextStyle(
+            fontSize: 20.0
+          ),
+          ),
+          new RaisedButton(
+          
+              child: new Text("Click Here", style: new TextStyle(
+                color: Colors.black,
+                
+                ) 
+                
+              ),
+              onPressed: _changeText,
+              color: Colors.yellow,
+            )
+        ],
+      ),
+    ),
+
+  );
 }
+
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       appBar: new AppBar(
-        title: new Center(child: new Text('Home Page'),)
+        title: new Text('Home Page'),
       ),
       body: _usedWidget()
     );
