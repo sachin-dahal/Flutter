@@ -1,4 +1,5 @@
 import 'package:code_learno/constants.dart';
+import 'package:code_learno/screens/choosing_program_screen.dart';
 import 'package:code_learno/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -77,7 +78,16 @@ class LoginScreen extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return ChooseProgram();
+                                },
+                              ),
+                            );
+                          },
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10.0),
                             child: Text(
