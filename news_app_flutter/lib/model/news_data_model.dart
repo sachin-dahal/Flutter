@@ -6,7 +6,16 @@ class NewsDataModel {
   final String newsContent;
   final String newsImageUrl;
 
-  NewsDataModel.fromJson(Map<String, dynamic> parsedData)
+NewsDataModel {
+	this.newsAuthor,
+	this.publishedDate,
+	this.newsTitle,
+	this.newsDescription,
+	this.newsContent,
+	this.newsImageUrl,
+}
+
+  factory NewsDataModel.fromJson(Map<String, dynamic> parsedData)
       : newsAuthor = parsedData['author'],
         publishedDate = parsedData['publishedAt'],
         newsTitle = parsedData['title'],
