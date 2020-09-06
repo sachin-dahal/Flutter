@@ -15,11 +15,14 @@ NewsDataModel {
 	this.newsImageUrl,
 }
 
-  factory NewsDataModel.fromJson(Map<String, dynamic> parsedData)
-      : newsAuthor = parsedData['author'],
-        publishedDate = parsedData['publishedAt'],
-        newsTitle = parsedData['title'],
-        newsDescription = parsedData['description'],
-        newsContent = parsedData['content'],
-        newsImageUrl = parsedData['urlToImage'];
+  factory NewsDataModel.fromJson(Map<String, dynamic> parsedData){
+	return NewsDataModel(
+		newsAuthor : parsedData['author'],
+        	publishedDate : parsedData['publishedAt'],
+        	newsTitle : parsedData['title'],
+        	newsDescription : parsedData['description'],
+        	newsContent : parsedData['content'],
+        	newsImageUrl : parsedData['urlToImage'],
+	);
+		}
 }
